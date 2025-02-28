@@ -35,6 +35,9 @@ $ npm install
 ## Compile and run the project
 
 ```bash
+#docker
+docker run --name postgres-user-postgres-pass-123456-db-todolist -e POSTGRES_PASSWORD=123456 -e POSTGRES_DB=todolist -e POSTGRES_USER=postgres -p 5432:5432 -d postgres
+
 # development
 $ npm run start
 
