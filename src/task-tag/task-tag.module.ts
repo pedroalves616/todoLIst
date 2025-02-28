@@ -4,8 +4,7 @@ import { TaskTag } from './task-tag.model';
 import { TaskTagService } from './task-tag.service';
 
 @Module({
-  imports: [SequelizeModule.forFeature([TaskTag])], // Importa o modelo TaskTag
-  providers: [TaskTagService], // Registra o serviço
-  exports: [TaskTagService], // Exporta o serviço para uso em outros módulos
+  imports: [SequelizeModule.forFeature([TaskTag])], 
+  exports: [TaskTagService],
 })
 export class TaskTagModule {}

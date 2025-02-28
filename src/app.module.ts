@@ -14,16 +14,20 @@ import { TaskTag } from './task-tag/task-tag.model';
         dialect: 'postgres', 
         host: configService.get('DB_HOST'), 
         port: +configService.get('DB_PORT'), 
-        username: configService.get('DB_USERNAME'), 
+        username: configService.get('DB_USERNAME'),
         password: configService.get('DB_PASSWORD'), 
         database: configService.get('DB_NAME'), 
         models: [Task, Tag, TaskTag], 
         autoLoadModels: true, 
         synchronize: true, 
+        dialectOptions: {
+          ssl: false, 
+          native: true, 
+        },
       }),
       inject: [ConfigService],
     }),
-   
+    
   ],
 })
 export class AppModule {}
